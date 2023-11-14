@@ -43,8 +43,7 @@ async def private_receive_handler(c: Client, m: Message):
             quote=True,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◉ sᴛʀᴇᴀᴍ ◉", url=stream_link), #Stream Link
-                                                InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link),
-                                                InlineKeyboardButton('Support', url='https://t.me/TomenBots)]]) #Download Link
+                                                InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link)]]) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
@@ -72,8 +71,7 @@ async def channel_receive_handler(bot, broadcast):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [InlineKeyboardButton("◉ sᴛʀᴇᴀᴍ ◉", url=stream_link),
-                     InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link),
-                     InlineKeyboardButton('Support', url='https://t.me/TomenBots)] 
+                     InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link)] 
                 ]
             )
         )
