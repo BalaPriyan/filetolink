@@ -41,7 +41,7 @@ async def ping(b, m):
     
     
     
-@StreamBot.on_message(filters.command("status📊"))
+@StreamBot.on_message(filters.command("status"))
 async def stats(bot, update):
   currentTime = readable_time((time.time() - StartTime))
   total, used, free = shutil.disk_usage('.')
