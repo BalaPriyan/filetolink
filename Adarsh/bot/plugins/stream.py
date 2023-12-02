@@ -42,7 +42,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◉ sᴛʀᴇᴀᴍ ◉", web_app: { url: stream_link }), #keyboard: [[{ text: "web app", web_app: { url: web_link } }]],Stream Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◉ sᴛʀᴇᴀᴍ ◉", web_app=stream_link), #keyboard: [[{ text: "web app", web_app: { url: web_link } }]],Stream Link
                                                 InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link)]]) #Download Link
         )
     except FloodWait as e:
