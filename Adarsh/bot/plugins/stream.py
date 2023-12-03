@@ -10,7 +10,7 @@ from urllib.parse import quote_plus
 from pyrogram import filters, Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-
+from pyrogram.types import WebAppInfo
 from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
 
@@ -42,7 +42,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("◉ sᴛʀᴇᴀᴍ ◉", url=stream_link), #keyboard: [[{ text: "web app", web_app: { url: web_link } }]],Stream Link
+            reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text="Stream", web_app=WebAppInfo(page_link))), #keyboard: [[{ text: "web app", web_app: { url: web_link } }]],Stream Link
                                                 InlineKeyboardButton('● ᴅᴏᴡɴʟᴏᴀᴅ ●', url=online_link)]]) #Download Link
         )
     except FloodWait as e:
